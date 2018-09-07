@@ -1,0 +1,13 @@
+func move(n:Int,from:Character,to:Character) {
+    print ("\(from)--->\(to)")
+}
+func hanoi(n:Int,form:Character,depend:Character,to:Character) {
+    if n == 1 {
+        move(n: 1, from: form, to: to)
+    } else {
+        hanoi(n: n-1, form: form, depend: to, to: depend)
+        move(n: n, from: form, to: to)
+        hanoi(n: n-1, form: depend, depend: form, to: to)
+    }
+}
+hanoi(n: 5, form:Character("A") , depend: Character("B"),to: Character("C"))
